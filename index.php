@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-
     <style>
         #side_menu{
             position: fixed;
@@ -106,7 +105,7 @@
                 <a href="mailto:saadioussama09@gmail.com" style="text-decoration: none; color: black;"><i class="fas fa-envelope"></i>saadioussama09@gmail.com</a>
             </div>
         </div>    
-
+	<h1>Charaf edit here</h1>
         <style>
             /* The Modal (background) */
             .modal {

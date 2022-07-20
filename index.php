@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-    </head>
+    </head>djhgkhgjh
+hkjhkjhkjh
     <style>
         #side_menu{
             position: fixed;

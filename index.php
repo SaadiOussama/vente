@@ -9,8 +9,7 @@
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-    </head>djhgkhgjh
-hkjhkjhkjh
+    </head>
     <style>
 	
 	
@@ -110,7 +109,7 @@ hkjhkjhkjh
                 <a href="mailto:saadioussama09@gmail.com" style="text-decoration: none; color: black;"><i class="fas fa-envelope"></i>saadioussama09@gmail.com</a>
             </div>
         </div>    
-
+	<h1>Charaf edit here</h1>
         <style>
             /* The Modal (background) */
             .modal {

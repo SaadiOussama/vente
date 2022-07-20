@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>First html title</title>
+        <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+	<style>
+		#side_menu{
+			position: fixed;
+			overflow-y: auto;
+			overflow-x: hidden;
+			width: 60px;
+			height: 100vh;
+			background: rgb(240, 240, 240);
+			box-shadow: 0px 0px 6px grey;
+			z-index: 999999;
+			padding: 10px;
+			transition: 0.3s;
+		}
+		  .show_side_menu{
+			  width:200px !important
+		  }
+		  .link_side{
+			  padding: 20px;
+			  margin-left: 10px;
+		  }
+		#side_menu ul{
+			padding-left: 0;
+			padding-top: 30px;
+			list-style-type: none;
+			margin: 0;
+		}
+		#side_menu ul li a{
+			display: block;
+			border-radius: 5px;
+			transition: .3s;
+			padding: 10px 20px 10px 5px;
+			white-space: nowrap;
+		}
+		#side_menu ul li a:hover{
+			background: rgb(218, 218, 218);
+		}
+		.icon_side_menu{
+			display: inline-block;
+			width: 30px;
+			text-align:center;
+		}
+		#black_div{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background: #000000a6;
+			z-index: 99999;
+			display: none;
+		}
+		.show_black_div{
+			display: block !important;
+		}			  
+	</style>
+	
+	  <div id="side_menu">
+			<span class="btn btn-link" onclick="showMenu()"><i class="fas fa-bars"></i></span>
+		  <ul>
+			<li><a href=""><span class="icon_side_menu"><i class="fas fa-envelope"></i></span><span class="link_side">Inbox</span></a></li>
+			<li><a href=""><span class="icon_side_menu"><i class="fas fa-paper-plane"></i></span><span class="link_side">Outbox</span></a></li>
+			<li><a href=""><span class="icon_side_menu"><i class="fas fa-address-book"></i></span><span class="link_side">Contacts</span></a></li>
+			<li><a href=""><span class="icon_side_menu"><i class="fas fa-file-alt"></i></span><span class="link_side">Drafts</span></a></li>
+			<li><a href=""><span class="icon_side_menu"><i class="fas fa-heart"></i></span><span class="link_side">Favourites</span></a></li>
+			<li><a href=""><span class="icon_side_menu"><i class="fas fa-star"></i></span><span class="link_side">Starred</span></a></li>
+		  </ul>
+	  </div>
+	  <div id="black_div" onclick="hideMenu()"></div>
+
+	  <script>
+		  function showMenu(){
+			  document.getElementById('side_menu').classList.toggle('show_side_menu');
+			  document.getElementById('black_div').classList.toggle('show_black_div');
+		  }
+
+		  function hideMenu(){
+			  document.getElementById('side_menu').classList.toggle('show_side_menu');
+			  document.getElementById('black_div').classList.toggle('show_black_div');
+
+		  }
+	  </script>
+
+<body>
+        <a id="goToTop" href="#top"><i class="fas fa-chevron-up"></i></a>
+    <div class="myrow" style="padding: 5px;;" id="social_network">
+        <div class="mycol-4">
+            <a href="https://www.facebook.com/"  class="facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/" class="youtube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com" class="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="mycol-8">
+            <a href="tel:+213549282661" style="text-decoration: none; color: black;"><i class="fas fa-phone-alt"></i>+213 (0) 549282661</a>
+            <a href="mailto:saadioussama09@gmail.com" style="text-decoration: none; color: black;"><i class="fas fa-envelope"></i>saadioussama09@gmail.com</a>
+        </div>
+    </div>    
+
+	<style>
+		/* The Modal (background) */
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 999999; /* Sit on top */
+			padding-top: 100px; /* Location of the box */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+		}
+		
+		/* Modal Content (image) */
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+		}
+		
+		/* Caption of Modal Image */
+		#caption {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			text-align: center;
+			color: #ccc;
+			padding: 10px 0;
+			height: 150px;
+		}
+		
+		/* Add Animation */
+		.modal-content, #caption {    
+			-webkit-animation-name: zoom;
+			-webkit-animation-duration: 0.6s;
+			animation-name: zoom;
+			animation-duration: 0.6s;
+		}
+		
+		@-webkit-keyframes zoom {
+			from {-webkit-transform:scale(0)} 
+			to {-webkit-transform:scale(1)}
+		}
+		
+		@keyframes zoom {
+			from {transform:scale(0)} 
+			to {transform:scale(1)}
+		}
+		
+		/* The Close Button */
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+		
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	
+		
+		
+		/* 100% Image Width on Smaller Screens */
+		@media only screen and (max-width: 700px){
+			.modal-content {
+				width: 100%;
+			}
+		}
+		</style>
+	
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+		<span class="close">×</span>
+		<img class="modal-content" id="img01">
+		<div id="caption"></div>
+	  </div>
+
+
+<!--     
+    <nav class="navbar  sticky-top navbar-expand-lg navbar-light bg-light bg-orange" style="box-shadow: 0px 2px 3px grey;">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#">
+			<img src="images/Logo_Appel.png" alt="" style="max-height: 50px;"></a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+			  <li class="nav-item text-center">
+				<a class="nav-link active" aria-current="page" href="index.html">Acceuil</a>
+			  </li>
+			  <li class="nav-item text-center">
+				<a class="nav-link" href="portfolio.html">Portfolio</a>
+			  </li>
+			  <li class="nav-item text-center">
+				<a class="nav-link" href="services.html">Services</a>
+			  </li>
+			  <li class="nav-item text-center">
+				<a class="nav-link" href="contact.html">Contact</a>
+			  </li>
+			  <li class="nav-item dropdown text-center">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				  Dropdown
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  <li><a class="dropdown-item" href="#">Action</a></li>
+				  <li><a class="dropdown-item" href="#">Another action</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Something else here</a></li>
+				</ul>
+			  </li>
+			  <li class="nav-item dropdown text-center">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				  Produits
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  <li><a class="dropdown-item" href="#">Collection 1</a></li>
+				  <li><a class="dropdown-item" href="#">Collection 2</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Collection 3</a></li>
+				</ul>
+			  </li>
+			  <li class="nav-item text-center">
+				<a class="nav-link disabled">Disabled</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	</nav> -->
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="images/iPhone_13_N4.jpg" class="d-block w-100" alt="...">
+			<div class="carousel-caption d-none d-md-block">
+			  <h5>First slide label</h5>
+			  <p>Some representative placeholder content for the first slide.</p>
+			</div>
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/iphone_13_N8.png" class="d-block w-100" alt="...">
+			<div class="carousel-caption d-none d-md-block">
+			  <h5>Second slide label</h5>
+			  <p>Some representative placeholder content for the second slide.</p>
+			</div>
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/iphone_12_N7.png" class="d-block w-100" alt="...">
+			<div class="carousel-caption d-none d-md-block">
+			  <h5>Third slide label</h5>
+			  <p>Some representative placeholder content for the third slide.</p>
+			</div>
+		  </div>
+		</div>
+		<button class="carousel-control-prev" style="background: linear-gradient(90deg, #00000091, transparent);" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" style="background: linear-gradient(270deg, #00000091, transparent);" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+
+<div class="container-fluid" style="padding-top: 30px; padding-bottom: 30px;">
+	<h3 class="text-center text-uppercase">Nos services</h3>
+	<br>
+	    <br>
+	         <br>
+	<div class="row">
+		<div class="col-md-8 text-center">
+			<h3>IPHONE 13 PRO MAX</h3>
+			<p>Si vous êtes à la recherche d'un nouveau téléphone, pourquoi ne pas craquer sur l'iPhone 13.
+			   Ce dernier représente toujours tout le savoir faire d'Apple en matière de smartphone 
+			   avec sa puissance puce A15 Bionic qui écrase toujours autant la concurrence sur de nombreux points.</p>
+			   <p>
+				   <span class="btn btn-success">Read More</span>
+			   </p>
+		</div>
+		<div class="col-md-4">
+			<img src="images/iphone_13_N8.png" class="img-fluid img-thumbnail">
+		</div>
+	</div>
+	<br>
+	    <br>
+	         <br>
+	<div class="row">		 
+	    <div class="col-md-4">
+		    <img src="images/iPhone_13_N4.jpg" class="img-fluid img-thumbnail">
+	    </div>
+	    <div class="col-md-8 text-center">
+			<h3>IPHONE 13 PRO MAX</h3>
+			<p>Si vous êtes à la recherche d'un nouveau téléphone, pourquoi ne pas craquer sur l'iPhone 13.
+			   Ce dernier représente toujours tout le savoir faire d'Apple en matière de smartphone 
+			   avec sa puissance puce A15 Bionic qui écrase toujours autant la concurrence sur de nombreux points.</p>
+			   <p>
+				   <span class="btn btn-success">Read More</span>
+			   </p>
+	    </div>
+	</div>
+	<br>
+	    <br>
+	         <br>
+	<div class="row">
+		<div class="col-md-8 text-center">
+			<h3>IPHONE 13 PRO MAX</h3>
+				<p>Si vous êtes à la recherche d'un nouveau téléphone, pourquoi ne pas craquer sur l'iPhone 13.
+				  Ce dernier représente toujours tout le savoir faire d'Apple en matière de smartphone 
+				  avec sa puissance puce A15 Bionic qui écrase toujours autant la concurrence sur de nombreux points.</p>
+				    <p>
+                      <span class="btn btn-success">Read More</span>
+					 </p>
+		</div>
+				<div class="col-md-4">
+					<img src="images/iphone_13_N8.png" class="img-fluid img-thumbnail">
+		         </div>
+	</div>		 
+</section>
+<br>
+<section style="padding:  40px 20px; background: rgb(6, 156, 255); color: white;">
+	<h4 class="text-center" s>
+		N'hesttez de nous contacter, l'enterprise est toujours a voter service
+	</h4>
+	<p class="text-center" style="margin-top: 25px;">
+		<a href="#" class="btn btn-success">Contactez nous</a>
+	</p>
+</section>
+
+<section class="container" style="padding-bottom: 40px;">
+	<h2 class="text-center" style="padding: 30px 20px;">Si vous attendiez une baisse de prix consequente pour l'iPhone 13</h2>
+	<div class="row">
+		<div class="col-md-4 text-center">
+			<div class="img-thumbnail">
+				<img src="images/iPhone-13-Pro-Max-PNG-Photos.png">
+				<h4 style="padding-top: 10px;">IPHONE 13 PRO MAX <span class="badge bg-secondary">The Color</span></h4>
+				<p>Si vous attendiez une baisse de prix consequente pour l'iPhone 13 ,
+				   vous allez surement craquer aujourd'hui.</p>
+				   <p class="text-start" style="padding: 5px 10px;">
+					 <a href="#" class="btn btn-primary">Voir Plus</a>
+					 <a href="#" class="btn btn-danger float-end">Commander</a>
+				   </p>
+			</div>
+		</div>
+		<div class="col-md-4 text-center">
+			<div class="img-thumbnail">
+				<img src="images/iPhone-13-Pro-Max-PNG-Photos.png">
+				<h4 style="padding-top: 10px;">IPHONE 13 PRO MAX <span class="badge bg-secondary">The Color</span></h4>
+				<p>Si vous attendiez une baisse de prix consequente pour l'iPhone 13 ,
+				   vous allez surement craquer aujourd'hui.</p>
+				   <p class="text-start" style="padding: 5px 10px;">
+					 <a href="#" class="btn btn-primary">Voir Plus</a>
+					 <a href="#" class="btn btn-danger float-end">Commander</a>
+				   </p>
+			</div>
+		</div>
+		<div class="col-md-4 text-center">
+			<div class="img-thumbnail">
+				<img src="images/iPhone-13-Pro-Max-PNG-Photos.png" onclick="showModal(this)">
+				<h4 style="padding-top: 10px;">IPHONE 13 PRO MAX <span class="badge bg-secondary">The Color</span></h4>
+				<p>Si vous attendiez une baisse de prix consequente pour l'iPhone 13 ,
+				   vous allez surement craquer aujourd'hui.</p>
+				   <p class="text-start" style="padding: 5px 10px;">
+					 <a href="#" class="btn btn-primary">Voir Plus</a>
+					 <a href="#" class="btn btn-danger float-end">Commander</a>
+				   </p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="container-fluid" style="padding-top: 30px; padding-bottom: 30px;">
+	<h2 class="text center text-uppercase">Members</h2>
+	<div class="row">
+		<div class="col-md-4 text-center">
+			<div class="bg_card">
+				<div style="height: 150px; background: rgb(0, 174, 255);"></div>
+				<div class="myimg-card" style="background: url(images/blank-profile-picture-973460_640.png) no-repeat center center scroll; background-size: cover;"></div>
+				 
+				<h5 class="text-center mytitle-card">Steve Jobs<span class="text-muted">56</span></h5>
+				<p class="text-muted text-center">San Francisco</p>
+				<P class="text-center">
+		           <a href="https://www.facebook.com/"  class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                   <a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                   <a href="https://www.youtube.com/" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                   <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+		        </P>
+				<hr>
+				<div class="container-fluid" style="padding-bottom: 20px;">
+					<div class="row">
+						<div class="col">
+							<span style="font-weight: 900;">80k</span>
+							<span class="text-muted">Followers</span>
+						</div>
+						<div class="col">
+							<span style="font-weight: 900;">803k</span>
+							<span class="text-muted"><br>Likes</span>
+						</div>
+						<div class="col">
+							<span style="font-weight: 900;">1.4k</span>
+							<span class="text-muted"><br>Photos</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 text-center">
+			<div class="bg_card">
+				<div style="height: 150px; background: rgb(0, 174, 255);"></div>
+				<div class="myimg-card" style="background: url(images/blank-profile-picture-973460_640.png) no-repeat center center scroll; background-size: cover;"></div>
+				 
+				<h5 class="text-center mytitle-card">Elon Musk<span class="text-muted">50</span></h5>
+				<p class="text-muted text-center">l'Afrique du Sud</p>
+				<P class="text-center">
+		           <a href="https://www.facebook.com/"  class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                   <a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                   <a href="https://www.youtube.com/" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                   <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+		        </P>
+				<hr>
+				<div class="container-fluid" style="padding-bottom: 20px;">
+					<div class="row">
+						<div class="col">
+							<span style="font-weight: 900;">80k</span>
+							<span class="text-muted">Followers</span>
+						</div>
+						<div class="col">
+							<span style="font-weight: 900;">803k</span>
+							<span class="text-muted"><br>Likes</span>
+						</div>
+						<div class="col">
+							<span style="font-weight: 900;">1.4k</span>
+							<span class="text-muted"><br>Photos</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 text-center">
+			<div class="bg_card">
+				<div style="height: 150px; background: rgb(0, 174, 255);"></div>
+				<div class="myimg-card" style="background: url(images/blank-profile-picture-973460_640.png) no-repeat center center scroll; background-size: cover;"></div>
+				 
+				<h5 class="text-center mytitle-card">Bill Gates<span class="text-muted">66</span></h5>
+				<p class="text-muted text-center">Washington</p>
+				<P class="text-center">
+		           <a href="https://www.facebook.com/"  class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                   <a href="https://www.linkedin.com/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                   <a href="https://www.youtube.com/" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                   <a href="https://www.instagram.com/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+		        </P>
+				<hr>
+				<div class="container-fluid" style="padding-bottom: 20px;">
+					<div class="row">
+						<div class="col">
+							<span style="font-weight: 900;">80k</span>
+							<span class="text-muted">Followers</span>
+						</div>
+						<div class="col">
+							<span style="font-weight: 900;">803k</span>
+							<span class="text-muted"><br>Likes</span>
+						</div>
+						<div class="col">
+							<span style="font-weight: 900;">1.4k</span>
+							<span class="text-muted"><br>Photos</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+	  <style type="text/css">
+		  .col-zoom{
+			  padding: 0px;
+			  overflow: hidden;
+			  border: 2px solid transparent;
+			  position: relative;
+		  }
+
+		  .col-zoom img{
+			  transition: 0.3s;
+			  filter: blur(2px);
+		  }
+
+		  .col-zoom:hover img{
+			  transform: rotatez(15deg) scale(1.5);
+			  filter: blur(0px);
+		  }
+
+		  .col-zoom span , .col-zoom a{
+			  position: absolute;
+			  top:50%;
+			  left:50%;
+			  transform: translate(-50%,-50%);
+			  opacity: 0;
+			  transition: 0.3s;
+		  }
+
+		  .col-zoom:hover span, .col-zoom:hover a{
+			  opacity: 1;
+		  }
+	  </style>
+
+	  <section class="container-fluid">
+		  <div class="row">
+			  <div class="col-sm-4 col-zoom">
+				  <img src="images/iphone_12_N7.png" class="img-fluid" alt="iphone_12_N7.png">
+				  <span class="btn btn-primary" onclick="showModal(this.parentElement.children[0])" ><i class="fas fa-search-plus"></i></span>
+			  </div>
+
+			  <div class="col-sm-4 col-zoom">
+				<img src="images/iphone_12_N7.png" class="img-fluid" alt="iphone_12_N7.png">
+				<span class="btn btn-primary" onclick="showModal(this.parentElement.children[0])" ><i class="fas fa-search-plus"></i></span>
+			</div>
+
+			<div class="col-sm-4 col-zoom">
+				<img src="images/iphone_12_N7.png" class="img-fluid" alt="iphone_12_N7.png">
+				<span class="btn btn-primary" onclick="showModal(this.parentElement.children[0])" ><i class="fas fa-search-plus"></i></span>
+			</div>
+
+			<div class="col-sm-4 col-zoom">
+				<img src="images/iphone_12_N7.png" class="img-fluid" alt="iphone_12_N7.png">
+				<span class="btn btn-primary" onclick="showModal(this.parentElement.children[0])" ><i class="fas fa-search-plus"></i></span>
+			</div>
+			
+			<div class="col-sm-4 col-zoom">
+				<img src="images/iphone_12_N7.png" class="img-fluid" alt="iphone_12_N7.png">
+				<span class="btn btn-primary" onclick="showModal(this.parentElement.children[0])" ><i class="fas fa-search-plus"></i></span>
+			</div>
+
+			<div class="col-sm-4 col-zoom">
+				<img src="images/iphone_12_N7.png" class="img-fluid" alt="iphone_12_N7.png">
+				<span class="btn btn-primary" onclick="showModal(this.parentElement.children[0])" ><i class="fas fa-search-plus"></i></span>
+			</div>
+		  </div>
+	  </section>
+
+	  <style type="text/css">
+		  .col-over{
+			  padding: 0;
+			  position: relative;
+			  overflow: hidden;
+		  }
+
+		  .overlay{
+			  position: absolute;
+			  transition: 0.5s;
+			  background: rgba(0,0,0,0.4);
+			  overflow: hidden;
+		  }
+
+		  .left-overlay{
+			  top: 0;
+			  left: 0;
+			  width: 0;
+			  height: 100%;
+		  }
+
+		  .top-overlay{
+			  top: 0;
+			  left: 0;
+			  width:100%;
+			  height: 0;
+		  }
+
+		  .right-overlay{
+			  top: 0;
+			  right: 0;
+			  width: 0;
+			  height: 100%;
+		  }
+
+		  .bottom-overlay{
+			  bottom: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 0;
+		  }
+
+		  .col-over:hover .overlay{
+			  width: 100%;
+			  height: 100%;
+		  }
+
+		  .overlay a{
+			  position: absolute;
+			  top: 50%;
+			  left:50%;
+			  transform: translate(-50%,-50%);
+			  transition: 0.3s;
+			  white-space: nowrap;
+		  }
+	  </style>
+
+	  <section class="container-fluid">
+		  <div class="row">
+			  <div class="col-sm-4 col-over">
+				  <img src="images/iphone_12_N7.png" class="img-fluid">
+				  <div class="overlay left-overlay">
+					  <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Click here</a>
+				  </div>
+			  </div>
+
+			  <div class="col-sm-4 col-over">
+				<img src="images/iphone_12_N7.png" class="img-fluid">
+				<div class="overlay top-overlay">
+					<a href="#" class="btn btn-primary"><i class="fa fa-plus"></i>Click here</a>
+				</div>
+			</div>
+
+			<div class="col-sm-4 col-over">
+				<img src="images/iphone_12_N7.png" class="img-fluid">
+				<div class="overlay right-overlay">
+					<a href="#" class="btn btn-primary"><i class="fa fa-plus"></i>Click here</a>
+				</div>
+			</div>
+
+			<div class="col-sm-4 col-over">
+				<img src="images/iphone_12_N7.png" class="img-fluid">
+				<div class="overlay left-overlay">
+					<a href="#" class="btn btn-primary"><i class="fa fa-plus"></i>Click here</a>
+				</div>
+			</div>
+
+			<div class="col-sm-4 col-over">
+				<img src="images/iphone_12_N7.png" class="img-fluid">
+				<div class="overlay bottom-overlay">
+					<a href="#" class="btn btn-primary"><i class="fa fa-plus"></i>Click here</a>
+				</div>
+			</div>
+
+			<div class="col-sm-4 col-over">
+				<img src="images/iphone_12_N7.png" class="img-fluid">
+				<div class="overlay right-overlay">
+					<a href="#" class="btn btn-primary"><i class="fa fa-plus"></i>Click here</a>
+				</div>
+			</div>
+		  </div>
+	  </section>
+	  <script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+		
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		function showModal(myImg){
+			modal.style.display = "block";
+			modalImg.src = myImg.src;
+			captionText.innerHTML = myImg.alt;
+		}
+		
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+		
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() { 
+			modal.style.display = "none";
+		}
+		</script>
+  
+</body>			
+</html>

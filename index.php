@@ -3,19 +3,11 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>First html title</title>
-
-
-
         <link rel="stylesheet" href="css/all.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <style>
-	
-	
-	
-	
-	
         #side_menu{
             position: fixed;
             overflow-y: auto;
@@ -96,6 +88,10 @@
     </script>
 
     <body>
+	
+	<h1>SAADI OUSSAMA</h1>
+	
+	
         <a id="goToTop" href="#top"><i class="fas fa-chevron-up"></i></a>
         <div class="myrow" style="padding: 5px;;" id="social_network">
             <div class="mycol-4">
